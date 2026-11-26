@@ -1,0 +1,18 @@
+Build an original 2D canvas flight game for the make.fun bounty
+best-flight-game-20261126-0057 ("Make the best flight game", $500 USDC,
+free entry). Game: "Ridge Runner Airlift" — bush pilot flying the Kestrel,
+a small prop plane in a high mountain valley. Three missions with different
+goals (Mail Run: fly 6 rings then land on the far strip; Ridge Rescue: low
+pass through a narrow gap, pick up a hiker, fly home; Storm Delivery: wind
+gusts, short strip). Flight model with throttle, pitch, lift, stall,
+fuel and damage. Lit needle-gauge HUD: altimeter, airspeed, compass
+heading, fuel, damage, objective, timer, score. WebAudio engine/wind
+sounds, no audio files. Deterministic screenshot modes
+?shot=start|play|land|end&seed=N. Source split one job per file under
+game/src/ (rng, terrain, plane, missions, hud, audio, input, render,
+game, main). Vanilla JS, no libraries, no network. main.ts (Node stdlib
+only) copies game/ + screenshots/ to MAKEFUN_OUTPUT_DIR and writes
+dossier.json via the vendored vendor/makefun-game.ts. Four screenshots
+1280x720 (cover, title, landing, mission complete), each under 256 KiB.
+Play-test in headless Chromium, fix every bug found, verify main.ts
+writes byte-identical output on two runs.
